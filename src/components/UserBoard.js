@@ -1,12 +1,14 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import {Link} from "react-router-dom";
+import UserItem from "./user/UserItem";
 
 class UserBoard extends Component{
     render(){
         return (
             <div className="container">
-                <a href="/" className="btn btn-primary mb-3">
+                <Link to="/addUser" className="btn btn-primary mb-3">
                     <i className="fas fa-plus-circle">Create new user</i>
-                </a>
+                </Link>
                 <br/>
                 <hr/>
                 <div className="container">
@@ -17,29 +19,7 @@ class UserBoard extends Component{
                                     <h3>Users Table</h3>
                                 </div>
                             </div>
-
-                            <div className="card mb-1 bg-light">
-
-                                <div className="card-header text-primary">
-                                    ID: idididid
-                                </div>
-                                <div className="card-body bg-light">
-                                    <h5 className="card-title">Name</h5>
-                                    <p className="card-text text-truncate">
-                                        eMail
-                                    </p>
-                                    <p className="card-text text-truncate">
-                                        Password
-                                    </p>
-                                    <a href="/" className="btn btn-primary">
-                                        View / Update
-                                    </a>
-                                    <button class="btn btn-danger ml-4">
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-
+                            <UserItem/>
                         </div>
                     </div>
                 </div>
