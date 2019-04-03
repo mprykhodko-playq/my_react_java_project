@@ -36,10 +36,36 @@ class UserBoard extends Component{
                         userTableItems.push(usersUsers[i])
                     }
                 }
+
+                return (
+                    <React.Fragment>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <div className="card text-center mb-2">
+                                        <div className="card-header bg-secondary text-white">
+                                            <h3>Users Table</h3>
+                                        </div>
+                                    </div>
+                                    {userTableItems}
+                                </div>
+
+                                <div className="col-md-4">
+                                    <div className="card text-center mb-2">
+                                        <div className="card-header bg-secondary text-white">
+                                            <h3>Another Table</h3>
+                                        </div>
+                                    </div>
+                                    {aAAPasswordItems}
+                                </div>
+                            </div>
+                        </div>
+                    </React.Fragment>
+                )
             }
         };
 
-        BoardAlgorithm(users);
+        BoardContent = BoardAlgorithm(users);
 
         return (
             <div className="container">
@@ -48,27 +74,7 @@ class UserBoard extends Component{
                 </Link>
                 <br/>
                 <hr/>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-4">
-                            <div className="card text-center mb-2">
-                                <div className="card-header bg-secondary text-white">
-                                    <h3>Users Table</h3>
-                                </div>
-                            </div>
-                            {userTableItems}
-                        </div>
-
-                        <div className="col-md-4">
-                            <div className="card text-center mb-2">
-                                <div className="card-header bg-secondary text-white">
-                                    <h3>Another Table</h3>
-                                </div>
-                            </div>
-                            {aAAPasswordItems}
-                        </div>
-                    </div>
-                </div>
+                {BoardContent}
             </div>
         );
     }
