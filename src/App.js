@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import AddUser from "./components/user/AddUser";
 import {Provider} from "react-redux";
 import store from "./store";
+import UpdateUser from "./components/user/UpdateUser";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
                     <Navbar/>
                     <Route exact path="/" component={UserBoard}/>
                     <Route exact path="/addUser" component={AddUser}/>
+                    <Route exact path="/updateUser/:user_id" component={UpdateUser}/>
                 </div>
             </Router>
         </Provider>

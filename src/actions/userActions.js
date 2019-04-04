@@ -1,5 +1,5 @@
 import axios from "axios";
-import {GET_ERRORS, GET_USERS, DELETE_USER} from "./types"
+import {GET_ERRORS, GET_USERS, DELETE_USER, GET_USER} from "./types"
 
 export const addUser = (user, history) => async dispatch => {
     try {
@@ -34,3 +34,15 @@ export const deleteUser = user_id => async dispatch => {
         });
     }
 };
+
+export const getUser = (user_id, history) => async dispatch => {
+    try {
+        const res = await axios.get(`http://localhost:8080/api/board/${user_id}`);
+        dispatch({
+            type: GET_USER,
+            payload: res.data
+        })
+    } catch (error) {
+        history.push("/");
+    }
+}

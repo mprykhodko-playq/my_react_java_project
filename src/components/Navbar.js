@@ -4,7 +4,7 @@ export default function Navbar() {
     return(
         <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
             <div className="container">
-                <a className="navbar-brand" href="/UserBoard">
+                <a className="navbar-brand" href="/">
                     User Task Tool
                 </a>
                 <button

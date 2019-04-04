@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {deleteUser} from "../../actions/userActions"
+import UpdateUser from "./UpdateUser";
 
 class UserItem extends Component{
 
@@ -26,9 +27,9 @@ class UserItem extends Component{
                     <p className="card-text text-truncate">
                         {user.password}
                     </p>
-                    <a href="/" className="btn btn-primary">
+                    <Link to={`updateUser/${user.id}`} className="btn btn-primary">
                         View / Update
-                    </a>
+                    </Link>
                     <button className="btn btn-danger ml-4" onClick={this.onDeleteClick.bind(this, user.id)}>
                         Delete
                     </button>
