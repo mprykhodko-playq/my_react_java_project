@@ -1,6 +1,15 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {deleteUser} from "../../actions/userActions"
 
-class UserItem extends Component {
+class UserItem extends Component{
+
+    onDeleteClick(user_id) {
+        this.props.deleteUser(user_id);
+    }
+
     render() {
         const {user} = this.props;
         return (
@@ -20,7 +29,7 @@ class UserItem extends Component {
                     <a href="/" className="btn btn-primary">
                         View / Update
                     </a>
-                    <button className="btn btn-danger ml-4">
+                    <button className="btn btn-danger ml-4" onClick={this.onDeleteClick.bind(this, user.id)}>
                         Delete
                     </button>
                 </div>
@@ -29,4 +38,8 @@ class UserItem extends Component {
     }
 }
 
-export default UserItem;
+UserItem.propTypes = {
+    deleteUser: PropTypes.func.isRequired
+};
+
+export default connect(null, {deleteUser}) (UserItem);
