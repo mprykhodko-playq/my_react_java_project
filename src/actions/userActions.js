@@ -45,4 +45,4 @@ export const getUser = (user_id, history) => async dispatch => {
     } catch (error) {
         history.push("/");
     }
-}
+};
